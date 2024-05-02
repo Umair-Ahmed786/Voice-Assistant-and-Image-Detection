@@ -104,7 +104,7 @@ function ObjectDetection({
                     <input type="file" onChange={handleFileChange} ref={imgref} style={{ height: 0, width: 0, visibility: 'hidden' }} />
                     <div>
 
-                        <button className='btn btn-lg btn-warning' onClick={() => imgref.current.click()}>Upload Image</button>
+                        <button className='btn btn-lg btn-warning' disabled={loading} onClick={() => imgref.current.click()}>Upload Image</button>
                     </div>
 
 
@@ -165,7 +165,8 @@ function ObjectDetection({
                                         className='img-fluid'
                                         alt="image"
                                         style={{ width: '100%', height: 'auto' }}
-                                        onClick={() => { setimageurl(generate_url(image)); setSelectedFile(image) }}
+                                        disabled={loading}
+                                        onClick={!loading ? () => { setimageurl(generate_url(image)); setSelectedFile(image) } : undefined}
                                     />
                                 </div>
                             ))}
