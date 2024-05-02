@@ -175,7 +175,7 @@ function First_component({
           // justifyContent: 'center',
           flexDirection: 'column',
           minHeight: '100vh',
-          border: '2px solid black',
+          // border: '2px solid black',
         }}
       >
 
